@@ -1,18 +1,18 @@
 (function(angular) {
     // 'use strict';
-    angular.module('moviecat.comingSoon',['ngRoute'])
+    angular.module('moviecat.movieList',['ngRoute'])
     .config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
         $locationProvider.hashPrefix('');
-        $routeProvider.when('/coming_soon/:page?',{
-            templateUrl:'./coming_soon/view.html',
-            controller:'comingSoonController'
+        $routeProvider.when('/:movie_list/:page?',{
+            templateUrl:'./movie_list/view.html',
+            controller:'movieListController'
         })
     }])
-    .controller('comingSoonController',['$scope','$http','$route','$routeParams','JSONPsrv',function($scope,$http,$route,$routeParams,JSONPsrv){
+    .controller('movieListController',['$scope','$http','$route','$routeParams','JSONPsrv',function($scope,$http,$route,$routeParams,JSONPsrv){
         $scope.pageSize = 5; // 每一页显示5条数据
         $scope.curPages = $routeParams.page || 1; // 从第一页开始
         var startCount = ($scope.curPages - 1) * $scope.pageSize;
-        JSONPsrv.myJsonp('http://api.douban.com/v2/movie/coming_soon',
+        JSONPsrv.myJsonp('http://api.douban.com/v2/movie/'+$routeParams.movie_list,
             {start:startCount ,count: $scope.pageSize},
             function(data){
                 // console.log(data.total);

@@ -4,10 +4,12 @@
     // start your ride
     angular.module('moviecat',[
         'moviecat.home',
-        'moviecat.inTheater',
-        'moviecat.top250',
-        'moviecat.comingSoon',
-        'moviewcat.detail'
+        // 'moviecat.inTheater',
+        // 'moviecat.top250',
+        // 'moviecat.comingSoon',
+        'moviecat.movieList',
+        'moviewcat.detail',
+        'moviecat.jsonp'
     ])
 
 })(angular);
