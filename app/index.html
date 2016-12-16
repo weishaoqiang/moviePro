@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <title>电影展示</title>
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/wap.css">
+    <link rel="stylesheet" href="./assets/css/wap.css">
 </head>
 
-<body>
+<body ng-app="moviecat"  ng-controller="searchController">
     <!-- 顶部导航栏开始 -->
     <div class="top">
         <div class="header">
             <a href="#/home_page"><img src="assets/img/logo.png" alt=""></a>
             <div class="search">
                 <input class="my-input" type="text" placeholder="电影搜索">
-                <button>搜索</button>
+                <button ng-click="search()">搜索</button>
             </div>
         </div>
         <nav class="nav">
@@ -29,44 +29,22 @@
         </nav>
     </div>
     <!-- 顶部导航栏结束 -->
+    <div class="container">
+        <div ng-view>
 
-
-    <div class="container" ng-app="moviecat">
-
-        <!-- 所有页面的展示区 -->
-        <div ng-view></div>
-        <!-- 首页开始 -->
-        <!-- <div class="list">
-            首页就是一张图片
-            <img src="assets/img/home_page.png" alt="">
-        </div> -->
-        <!-- 首页结束 -->
-
-        <!--电影列表开始-->
-
-        <!--电影列表结束-->
-
-        <!-- 电影详情开始 -->
-        <!-- 电影详情结束 -->
-        <!--其他-->
-
+        </div>
     </div>
     <footer class="footer">
         <div class="container">
             <p>版权所有&copy; 前端与移动开发学院 前端(允许侵权)</p>
         </div>
     </footer>
-
     <!-- 自动补全C3样式的前缀 -->
     <script src="assets/js/prefixfree.min.js"></script>
-
     <script src="../node_modules/angular/angular.js"></script>
     <script src="../node_modules/angular-route/angular-route.min.js"></script>
     <script src="./app.js"></script>
     <script src="./home/homeModule.js"></script>
-    <!-- <script src="./in_theaters/module.js"></script>
-    <script src="./top250/module.js"></script>
-    <script src="./coming_soon/module.js"></script> -->
     <script src="./movie_list/module.js"></script>
     <script src="./movie_detail/module.js"></script>
     <script src="./common/JSONP.js"></script>

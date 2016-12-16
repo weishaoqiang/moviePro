@@ -13,9 +13,12 @@
         $scope.curPages = $routeParams.page || 1; // 从第一页开始
         var startCount = ($scope.curPages - 1) * $scope.pageSize;
         JSONPsrv.myJsonp('http://api.douban.com/v2/movie/'+$routeParams.movie_list,
-            {start:startCount ,count: $scope.pageSize},
+            {
+                start:startCount,
+                count: $scope.pageSize,
+                q:$routeParams.q
+            },
             function(data){
-                // console.log(data.total);
                 $scope.totalPages = Math.ceil(data.total/$scope.pageSize);
                 $scope.data = data;
                 // 因为这里涉及到异步操作，那么angular在执行这个脏检查之后才获得数据，如果不强制再次执行脏检查机制的话，那么数据将不会被渲染懂啊页面上。

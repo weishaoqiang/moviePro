@@ -11,5 +11,10 @@
         'moviewcat.detail',
         'moviecat.jsonp'
     ])
-
+    .controller('searchController',['$scope','$location',function($scope,$location){
+        
+        $scope.search=function(){
+            console.log(111);
+        }
+    }]);
 })(angular);

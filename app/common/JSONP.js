@@ -17,7 +17,7 @@
             var script = doc.createElement("script");
             script.src = url;
             doc.body.appendChild(script);
-
+            
             $window[cbName] = function(data){
                 callback(data);
                 doc.body.removeChild(script);
