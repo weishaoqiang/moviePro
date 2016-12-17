@@ -13,7 +13,7 @@
         $scope.curPages = $routeParams.page || 1; // 从第一页开始
         var startCount = ($scope.curPages - 1) * $scope.pageSize; // 开始的数据
         $scope.loadShow = false;
-        JSONPsrv.myJsonp('http://api.douban.com/v2/movie/'+$routeParams.movie_list,
+        JSONPsrv.myJsonp('https://api.douban.com/v2/movie/'+$routeParams.movie_list,
             {
                 start: startCount,
                 count: $scope.pageSize,
