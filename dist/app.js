@@ -1,0 +1,1 @@
+!function(o){o.module("moviecat",["moviecat.home","moviewcat.detail","moviecat.movieList","moviecat.autoActive","moviecat.jsonp"]).controller("searchController",["$scope","$location","JSONPsrv",function(o,e,c){o.query="",o.search=function(){e.url("/search?q="+o.query)}}])}(angular);
